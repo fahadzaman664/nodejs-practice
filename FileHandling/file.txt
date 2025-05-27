@@ -1,0 +1,35 @@
+Nodejs:
+1.	Modules: in nodejs functions are called modules.
+Two type of modules : common js module and es module where nowadays latest we use es module which is import. Common js in old module we don’t use it nowadays
+	Here we do export of function/modules and we use these function in other js by importing, but here we do importing like const {}= require(“./yourfile
+	The below is old way ,
+	const sum = (a,b)=> a+b;
+	const sub = (a,b)=> a-b;
+	const mul = (a,b)=> a*b;
+	const div = (a,b)=> a/b;
+	
+	module.exports = {sum , sub, mul, div};
+
+
+ const {sum, sub} = require("./utils")
+console.log(`{sum  of a and b is ${sum(10,20)} and  sub of a and b is ${sub(10,20)}`)
+	but now we declared module in pakagejson like 
+	{
+	  "name": "modules",
+	  "version": "1.0.0",
+	  "main": "index.js",
+	  "type": "module",
+	  "scripts": {
+	    "test": "echo \"Error: no test specified\" && exit 1"
+	  },
+	  "keywords": [],
+	  "author": "",
+	  "license": "ISC",
+	  "description": ""
+	}
+	
+       
+	Then we do import and we export function directly like 
+	Export const sum = ( => a+b 
+	Then we import in other file like : import {sum} from “./yourfile.js”
+
