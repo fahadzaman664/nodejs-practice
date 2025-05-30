@@ -8,5 +8,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "🚀 A practice projects to learn Node.js fundamentals.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fahadzaman664/nodejs-practice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fahadzaman664/nodejs-practice/issues"
+  },
+  "homepage": "https://github.com/fahadzaman664/nodejs-practice#readme"
 }
