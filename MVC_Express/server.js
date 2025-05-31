@@ -1,8 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import path from 'path'
-import { User } from './Models/User.js'   
-
+import { userRegister } from './controllers/UserRegister.js';
 const app = express();
 app.use(express.static(path.join(path.resolve(), 'public')));
 app.use(express.json());
@@ -18,29 +17,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs')
 })
 
-app.post('/form-submit', async (req, res) => {
-
-    try {
-        const { name, email, password, contact, age } = req.body;
-
-        const newUser = await User.create({
-            name,
-            email,
-            password,
-            contact,
-            age,
-            createdAt: new Date(),
-        });
-
-        console.log('User created:', newUser);
-        res.json({ success: true, user: newUser });
-
-    } catch (error) {
-        res.status(500).json({ success: false, error: error.message });
-
-    }
-
-});
+app.post('/form-submit', userRegister)
 
 const port = 1000;
 app.listen(port, () => {
