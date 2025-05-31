@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" class="h-full">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader</title>
+    <link href="/style.css" rel="stylesheet">
+
+</head>
+
+<body class="min-h-screen bg-pink-400 flex items-center justify-center">
+
+  <div class="bg-yellow-400 rounded-lg p-8 shadow-md w-96 flex flex-col items-center gap-4">
+    <!-- Heading -->
+    <h1 class="text-2xl font-bold text-gray-800">Image Upload</h1>
+
+    <!-- Upload Form -->
+    <form action="fileupload" method="POST" enctype="multipart/form-data" class="flex flex-col items-center gap-4 w-full">
+      <!-- Choose File -->
+      <div>
+        <input type="file" name="file"
+          class="file:bg-indigo-500 file:hover:bg-indigo-600 file:text-white file:rounded file:px-4 file:py-2 file:border-0 text-gray-700"
+          required />
+      </div>
+
+      <!-- Upload Button -->
+      <div>
+        <button type="submit"
+          class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition duration-300">
+          Upload
+        </button>
+      </div>
+    </form>
+
+    <!-- Uploaded Image (if exists) -->
+    <% if (imgurl) { %>
+    <div class="mt-4 text-center w-full">
+      <h1 class="text-xl font-semibold text-green-600 mb-2">Image uploaded successfully</h1>
+       <a href="<%= imgurl %>" target="_blank">
+    <img src="<%= imgurl %>" alt="Uploaded Image" class="mx-auto rounded shadow-md max-w-full h-auto cursor-pointer hover:opacity-80 transition" />
+  </a>
+    </div>
+    <% } %>
+
+  </div>
+
+</body>
+
+
+</html>
