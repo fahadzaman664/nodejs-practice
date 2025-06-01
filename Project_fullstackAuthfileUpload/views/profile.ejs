@@ -1,0 +1,50 @@
+<!-- Updated profile page with centered logout button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Profile</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    .profile-card {
+      max-width: 400px;
+      margin: 3rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem auto;
+      display: block;
+      border: 3px solid #0d6efd;
+    }
+  </style>
+</head>
+
+<body class="bg-light d-flex justify-content-center align-items-center min-vh-100">
+  <div class="profile-card text-center">
+    <img
+      src="<%= user.imgUrl %>"
+      alt="User Profile Picture"
+      class="profile-image"
+    />
+    <h3 class="mb-3"><%= user.name %></h3>
+    <p class="text-muted mb-3"><strong>Email:</strong> <%= user.email %></p>
+
+    <!-- Centered logout button -->
+    <form action="/logout" method="POST" class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+  </div>
+</body>
+</html>
